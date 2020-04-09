@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.themoviedb.movies.moviedetails.view.GenreItemView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_genre"
+        style="@style/MediumText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_border"
+        android:gravity="center"
+        android:paddingLeft="@dimen/margin_12"
+        android:paddingTop="@dimen/margin_7"
+        android:paddingRight="@dimen/margin_12"
+        android:paddingBottom="@dimen/margin_7"
+        android:textColor="@color/white" />
+
+</com.themoviedb.movies.moviedetails.view.GenreItemView>
