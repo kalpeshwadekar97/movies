@@ -5,7 +5,6 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.themoviedb.movies.api.ApiResponse
 import com.themoviedb.movies.moviedetails.repository.MovieDetailsRepository
-import com.themoviedb.movies.movielist.repository.MovieListRepository
 
 class MovieDetailsViewModel(private val applicationContext: Application) :
     AndroidViewModel(applicationContext) {

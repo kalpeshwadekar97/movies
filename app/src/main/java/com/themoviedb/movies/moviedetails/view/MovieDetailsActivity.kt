@@ -55,7 +55,7 @@ class MovieDetailsActivity : BaseActivity() {
         movieDetailsViewModel = ViewModelProvider(this).get(MovieDetailsViewModel::class.java)
         movieDetailsViewModel.callMovieDetailsApi(
             "movie/$movieId",
-            "dd30b848438f23d6eac5ff777b6d6e1f"
+            ApiConstant.API_KEY
         )
         movieDetailsViewModel.movieDetailsResponseLiveData.observe(this, Observer {
             processApiResponse(it, ApiConstant.GET_MOVIE_DETAILS_API)
@@ -77,7 +77,8 @@ class MovieDetailsActivity : BaseActivity() {
         binding.movie = movieDetailsApiResponse
         toolbar.title = movieDetailsApiResponse.title
         Glide.with(this)
-            .load("https://image.tmdb.org/t/p/w500/${movieDetailsApiResponse.poster_path}")
+            .load("${AppConstants.IMAGE_PATH_W500}${movieDetailsApiResponse.poster_path}")
+            .placeholder(R.drawable.placeholder_w500)
             .into(iv_movie)
         tv_runtime.text = Helper.getFormattedTimeFromMinutes(movieDetailsApiResponse.runtime)
         tv_countries_languages.text = Helper.getFormattedCountryLanguageList(

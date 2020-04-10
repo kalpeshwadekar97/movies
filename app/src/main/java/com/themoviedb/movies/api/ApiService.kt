@@ -1,10 +1,12 @@
 package com.themoviedb.movies.api
 
+import com.themoviedb.movies.BuildConfig
 import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Response
 import retrofit2.Retrofit
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
-import okhttp3.logging.HttpLoggingInterceptor
 
 object ApiService {
     private lateinit var okHttpClientBuilder: OkHttpClient.Builder
@@ -16,14 +18,13 @@ object ApiService {
 
         val logging = HttpLoggingInterceptor()
         logging.level =
-            /*if (BuildConfig.DEBUG) */HttpLoggingInterceptor.Level.BODY/* else HttpLoggingInterceptor.Level.NONE*/
+            if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY else HttpLoggingInterceptor.Level.NONE
         okHttpClientBuilder.addInterceptor(logging)
 
-        /*val baseUrl = BuildConfig.BASE_API_URL*/
-
         adapterBuilder = Retrofit.Builder()
-            .baseUrl("https://api.themoviedb.org/3/")
+            .baseUrl(BuildConfig.BASE_API_URL)
             .addConverterFactory(GsonConverterFactory.create())
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
 
         retrofit = adapterBuilder.client(okHttpClientBuilder.build()).build()
     }
