@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="sortByOption"
+            type="com.themoviedb.movies.enums.SortByOptions" />
+
+        <variable
+            name="sortByDialogFragment"
+            type="com.themoviedb.movies.movielist.view.SortByBottomSheetDialogFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_sot_by"
+            style="@style/BoldText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_10"
+            android:text="@string/lbl_sort_by"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_sort_by_popularity"
+            style="@style/MediumText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_10"
+            android:text="@string/sort_by_popular"
+            app:layout_constraintStart_toStartOf="parent"
+            android:onClick="@{()-> sortByDialogFragment.onSortClick(sortByOption.POPULARITY)}"
+            app:layout_constraintTop_toBottomOf="@id/tv_sot_by" />
+
+        <TextView
+            android:id="@+id/tv_sort_by_ratings"
+            style="@style/MediumText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_10"
+            android:text="@string/sort_by_ratings"
+            app:layout_constraintStart_toStartOf="parent"
+            android:onClick="@{()-> sortByDialogFragment.onSortClick(sortByOption.RATINGS)}"
+            app:layout_constraintTop_toBottomOf="@id/tv_sort_by_popularity" />
+
+        <TextView
+            android:id="@+id/tv_sort_by_release_date"
+            style="@style/MediumText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_10"
+            android:text="@string/sort_by_release_date"
+            app:layout_constraintStart_toStartOf="parent"
+            android:onClick="@{()-> sortByDialogFragment.onSortClick(sortByOption.RELEASE_DATE)}"
+            app:layout_constraintTop_toBottomOf="@id/tv_sort_by_ratings" />
+
+        <TextView
+            android:id="@+id/tv_sort_by_vote_count"
+            style="@style/MediumText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_10"
+            android:text="@string/sort_by_vote_count"
+            app:layout_constraintStart_toStartOf="parent"
+            android:onClick="@{()-> sortByDialogFragment.onSortClick(sortByOption.VOTE_COUNT)}"
+            app:layout_constraintTop_toBottomOf="@id/tv_sort_by_release_date" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

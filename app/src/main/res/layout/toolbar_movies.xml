@@ -10,12 +10,29 @@
         android:elevation="@dimen/margin_4"
         app:navigationIcon="@drawable/back_arrow">
 
-        <TextView
-            android:id="@+id/toolbar_title"
-            style="@style/Toolbar.TitleText"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:gravity="center"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content">
 
+            <TextView
+                android:id="@+id/toolbar_title"
+                style="@style/Toolbar.TitleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_sort_by"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="@dimen/margin_15"
+                android:src="@drawable/sort_by"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.appcompat.widget.Toolbar>
 </merge>

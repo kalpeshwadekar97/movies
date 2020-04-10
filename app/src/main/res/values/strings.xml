@@ -4,9 +4,14 @@
     <string name="something_went_wrong">Something went wrong. Please try again later.</string>
     <string name="release_date">Release Date: %1$s</string>
     <string name="added_to_watch_later_list">Added to watch later list</string>
+    <string name="sort_by_popular">Popularity</string>
+    <string name="sort_by_ratings">User Ratings</string>
+    <string name="sort_by_release_date">Release Date</string>
+    <string name="sort_by_vote_count">Vote Count</string>
 
     // Labels
     <string name="lbl_vote">Vote: %1$d</string>
     <string name="lbl_adult">Adult</string>
     <string name="lbl_okay">Okay</string>
+    <string name="lbl_sort_by">Sort By</string>
 </resources>

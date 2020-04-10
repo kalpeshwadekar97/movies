@@ -10,10 +10,13 @@ import com.themoviedb.movies.movielist.model.Movie
 import io.reactivex.disposables.CompositeDisposable
 
 class MoviesDataSource(
-    private val compositeDisposable: CompositeDisposable
+    private val compositeDisposable: CompositeDisposable,
+    private val pageNumber: Int,
+    private val selectedSortByOption: String
 ) : PageKeyedDataSource<Int, Movie>() {
 
     var state: MutableLiveData<State> = MutableLiveData()
+    private val apiService = ApiService.createService(ApiClient::class.java)
 
     override fun loadInitial(
         params: LoadInitialParams<Int>,
@@ -21,10 +24,11 @@ class MoviesDataSource(
     ) {
         updateState(State.LOADING)
         compositeDisposable.add(
-            ApiService.createService(ApiClient::class.java).getMovieList(
+            apiService.getMovieList(
                 ApiConstant.GET_MOVIE_LIST_API_URL,
                 ApiConstant.API_KEY,
-                1
+                pageNumber,
+                selectedSortByOption
             )
                 .subscribe(
                     { response ->
@@ -32,7 +36,7 @@ class MoviesDataSource(
                         callback.onResult(
                             response.results,
                             null,
-                            2
+                            pageNumber + 1
                         )
                     },
                     {
@@ -45,10 +49,11 @@ class MoviesDataSource(
     override fun loadAfter(params: LoadParams<Int>, callback: LoadCallback<Int, Movie>) {
         updateState(State.LOADING)
         compositeDisposable.add(
-            ApiService.createService(ApiClient::class.java).getMovieList(
+            apiService.getMovieList(
                 ApiConstant.GET_MOVIE_LIST_API_URL,
                 ApiConstant.API_KEY,
-                params.key
+                params.key,
+                selectedSortByOption
             )
                 .subscribe(
                     { response ->

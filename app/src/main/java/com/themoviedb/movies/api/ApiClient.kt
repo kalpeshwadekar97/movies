@@ -17,7 +17,10 @@ interface ApiClient {
         @Path(
             "url",
             encoded = true
-        ) url: String, @Query("api_key") api_key: String, @Query("page") page_number: Int
+        ) url: String,
+        @Query("api_key") api_key: String,
+        @Query("page") page_number: Int,
+        @Query("sort_by") sort_by: String
     ): Single<MovieListApiResponse>
 
     /**
