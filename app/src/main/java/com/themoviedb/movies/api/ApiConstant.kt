@@ -6,9 +6,8 @@ object ApiConstant {
 
     // API URLs
     const val GET_MOVIE_LIST_API_URL = "discover/movie"
-    const val GET_MOVIE_DETAILS_API_URL = "movie"
+    const val GET_MOVIE_DETAILS_API_URL = "movie/"
 
     // API names
-    const val GET_MOVIE_LIST_API = "movie_list"
     const val GET_MOVIE_DETAILS_API = "movie_details"
 }

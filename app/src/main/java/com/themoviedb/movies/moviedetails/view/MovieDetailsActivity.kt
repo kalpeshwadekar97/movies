@@ -54,7 +54,7 @@ class MovieDetailsActivity : BaseActivity() {
     private fun callMovieDetailsApi() {
         movieDetailsViewModel = ViewModelProvider(this).get(MovieDetailsViewModel::class.java)
         movieDetailsViewModel.callMovieDetailsApi(
-            "movie/$movieId",
+            "${ApiConstant.GET_MOVIE_DETAILS_API_URL}$movieId",
             ApiConstant.API_KEY
         )
         movieDetailsViewModel.movieDetailsResponseLiveData.observe(this, Observer {
