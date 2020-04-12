@@ -38,7 +38,7 @@ class MovieListViewModel(private val applicationContext: Application) :
             LivePagedListBuilder<Int, Movie>(moviesDataSourceFactory, config).build()
     }
 
-    private fun getSelectedSortByOption(sortByOptions: SortByOptions?): String {
+    fun getSelectedSortByOption(sortByOptions: SortByOptions?): String {
         return when (sortByOptions) {
             SortByOptions.POPULARITY -> AppConstants.SORT_BY_POPULARITY
             SortByOptions.RATINGS -> AppConstants.SORT_BY_RATINGS

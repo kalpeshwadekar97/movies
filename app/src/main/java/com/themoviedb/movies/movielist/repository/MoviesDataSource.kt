@@ -71,7 +71,6 @@ class MoviesDataSource(
     }
 
     override fun loadBefore(params: LoadParams<Int>, callback: LoadCallback<Int, Movie>) {
-
     }
 
     private fun updateState(state: State) {

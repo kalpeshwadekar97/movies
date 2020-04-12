@@ -9,25 +9,25 @@ import org.junit.Test
 internal class HelperTest {
 
     @Test
-    fun getFormattedTimeFromMinutes_For150Minutes() {
+    fun getFormattedTimeFromMinutes_for150Minutes() {
         val result = Helper.getFormattedTimeFromMinutes(150)
         assertEquals("2hr 30mins", result)
     }
 
     @Test
-    fun getFormattedTimeFromMinutes_For0Minutes() {
+    fun getFormattedTimeFromMinutes_for0Minutes() {
         val result = Helper.getFormattedTimeFromMinutes(0)
         assertEquals("0hr 0mins", result)
     }
 
     @Test
-    fun getFormattedTimeFromMinutes_ForNegativeMinutes() {
+    fun getFormattedTimeFromMinutes_forNegativeMinutes() {
         val result = Helper.getFormattedTimeFromMinutes(-1)
         assertEquals("0hr 0mins", result)
     }
 
     @Test
-    fun getFormattedCountryLanguageList_WithBothList() {
+    fun getFormattedCountryLanguageList_withBothList() {
         val productionCountryList = listOf<ProductionCountry>(
             ProductionCountry("1", "India"),
             ProductionCountry("2", "USA"),
@@ -44,7 +44,7 @@ internal class HelperTest {
     }
 
     @Test
-    fun getFormattedCountryLanguageList_WithBlankCountryList() {
+    fun getFormattedCountryLanguageList_withBlankCountryList() {
         val productionCountryList = listOf<ProductionCountry>()
         val spokenLanguageList = listOf<SpokenLanguage>(
             SpokenLanguage("1", "Hindi"),
@@ -57,7 +57,7 @@ internal class HelperTest {
     }
 
     @Test
-    fun getFormattedCountryLanguageList_WithBlankLanguageList() {
+    fun getFormattedCountryLanguageList_withBlankLanguageList() {
         val productionCountryList = listOf<ProductionCountry>(
             ProductionCountry("1", "India"),
             ProductionCountry("2", "USA"),
@@ -71,7 +71,7 @@ internal class HelperTest {
     }
 
     @Test
-    fun getFormattedCountryLanguageList_WithBothBlankList() {
+    fun getFormattedCountryLanguageList_withBothBlankList() {
         val productionCountryList = listOf<ProductionCountry>()
         val spokenLanguageList = listOf<SpokenLanguage>()
         val result =
@@ -81,7 +81,7 @@ internal class HelperTest {
     }
 
     @Test
-    fun getFormattedCountryLanguageList_WithBlankCountryOrLanguageName() {
+    fun getFormattedCountryLanguageList_withBlankCountryOrLanguageName() {
         val productionCountryList = listOf<ProductionCountry>(
             ProductionCountry("1", "India"),
             ProductionCountry("2", ""),
