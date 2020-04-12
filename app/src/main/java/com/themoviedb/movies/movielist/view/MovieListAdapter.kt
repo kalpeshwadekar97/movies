@@ -32,6 +32,7 @@ class MovieListAdapter(
             Glide.with(context)
                 .load("${AppConstants.IMAGE_PATH_W342}${movie.poster_path}")
                 .placeholder(R.drawable.placeholder_w342)
+                .error(R.drawable.placeholder_w342)
                 .into(binding.ivMovie)
             itemView.setOnClickListener {
                 clickListener.onItemClick(movie)

@@ -79,6 +79,7 @@ class MovieDetailsActivity : BaseActivity() {
         Glide.with(this)
             .load("${AppConstants.IMAGE_PATH_W500}${movieDetailsApiResponse.poster_path}")
             .placeholder(R.drawable.placeholder_w500)
+            .error(R.drawable.placeholder_w500)
             .into(iv_movie)
         tv_runtime.text = Helper.getFormattedTimeFromMinutes(movieDetailsApiResponse.runtime)
         tv_countries_languages.text = Helper.getFormattedCountryLanguageList(

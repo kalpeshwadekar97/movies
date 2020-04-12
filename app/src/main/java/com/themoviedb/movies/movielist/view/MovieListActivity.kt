@@ -22,7 +22,7 @@ class MovieListActivity : BaseActivity(), OnRecyclerViewItemClickListener<Movie>
 
     private lateinit var movieListViewModel: MovieListViewModel
     private lateinit var movieListAdapter: MovieListAdapter
-    private var sortedBy: SortByOptions? = null
+    private var sortedBy: SortByOptions = SortByOptions.POPULARITY // by default sort by popular
     private val initialPageNumber = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
