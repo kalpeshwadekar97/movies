@@ -40,7 +40,7 @@ class MovieListAdapter(
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieListAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding: ItemMovieListBinding = DataBindingUtil.inflate(
             LayoutInflater.from(parent.context),
             R.layout.item_movie_list, parent, false

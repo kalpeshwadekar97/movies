@@ -90,7 +90,7 @@ class MovieDetailsActivity : BaseActivity() {
         )
         val genreList = getGenreList()
         rv_genres.apply {
-            addItemDecoration(EqualSpacingItemDecoration(35, RecyclerViewDisplayMode.HORIZONTAL))
+            addItemDecoration(EqualSpacingItemDecoration(15, RecyclerViewDisplayMode.HORIZONTAL))
             layoutManager =
                 LinearLayoutManager(this.context, LinearLayoutManager.HORIZONTAL, false)
             adapter =

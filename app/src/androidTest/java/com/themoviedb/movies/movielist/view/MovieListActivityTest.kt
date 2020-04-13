@@ -25,11 +25,11 @@ class MovieListActivityTest {
 
     @Test
     fun openSortByBottomSheetDialog(){
-        // is sort by option available
+        /** is sort by option available */
         onView(withId(R.id.iv_sort_by)).check(matches(isDisplayed()))
-        // click on sort by option
+        /** click on sort by option */
         onView(withId(R.id.iv_sort_by)).perform(ViewActions.click())
-        // is sort by bottom sheet dialog open
+        /** is sort by bottom sheet dialog open */
         onView(withId(R.id.tv_sot_by)).check(matches(isDisplayed()))
     }
 }

@@ -27,11 +27,11 @@ class MovieDetailsActivityTest {
 
     @Test
     private fun addToWatchLater() {
-        // check if floating action button is visible
+        /** check if floating action button is visible */
         onView(withId(R.id.fab_watch_later)).check(matches(isDisplayed()))
-        // perform click action on floating button
+        /** perform click action on floating button */
         onView(withId(R.id.fab_watch_later)).perform(ViewActions.click())
-        // check if Snackbar appears with successful text
+        /** check if Snackbar appears with successful text */
         onView(withId(com.google.android.material.R.id.snackbar_text))
             .check(matches(withText(R.string.added_to_watch_later_list)))
     }

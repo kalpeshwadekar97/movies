@@ -30,7 +30,7 @@ open class BaseActivity : AppCompatActivity() {
         }
     }
 
-    fun showToast(msg: String?) {
+    private fun showToast(msg: String?) {
         if (msg != null && !Validator.isEmpty(msg)) {
             Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
         }

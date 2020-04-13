@@ -10,6 +10,7 @@
     <string name="sort_by_release_date">Release Date</string>
     <string name="sort_by_vote_count">Vote Count</string>
     <string name="retry">Retry</string>
+    <string name="sort_dialog">sort</string>
 
     // Labels
     <string name="lbl_vote">Vote: %1$d</string>

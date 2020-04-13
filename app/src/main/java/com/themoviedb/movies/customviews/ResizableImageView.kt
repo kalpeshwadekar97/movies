@@ -1,13 +1,12 @@
 package com.themoviedb.movies.customviews
 
 import android.content.Context
-import android.widget.ImageView
-import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.view.View
+import androidx.appcompat.widget.AppCompatImageView
 
 
-class ResizableImageView : ImageView {
+class ResizableImageView : AppCompatImageView {
 
     constructor(context: Context) : super(context)
 

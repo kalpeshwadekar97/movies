@@ -8,7 +8,7 @@ object Helper {
         return if (minutes > 0)
             "${minutes / 60}hr ${minutes % 60}mins"
         else
-            "0hr 0mins"
+            "0hr 0min"
     }
 
     fun getFormattedCountryLanguageList(

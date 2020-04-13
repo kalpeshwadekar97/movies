@@ -86,7 +86,7 @@ class MovieListActivity : BaseActivity(), OnRecyclerViewItemClickListener<Movie>
 
     private fun onSortByClick() {
         val sortDialog = SortByBottomSheetDialogFragment(this, sortedBy)
-        sortDialog.show(supportFragmentManager, "sort")
+        sortDialog.show(supportFragmentManager, getString(R.string.sort_dialog))
     }
 
     fun sortBy(selectedSortByOption: SortByOptions) {

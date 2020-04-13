@@ -14,7 +14,7 @@ import com.themoviedb.movies.movielist.repository.MoviesDataSourceFactory
 import com.themoviedb.movies.utilities.AppConstants
 import io.reactivex.disposables.CompositeDisposable
 
-class MovieListViewModel(private val applicationContext: Application) :
+class MovieListViewModel(applicationContext: Application) :
     AndroidViewModel(applicationContext) {
 
     lateinit var movieListResponseLiveData: LiveData<PagedList<Movie>>
