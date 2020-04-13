@@ -37,6 +37,7 @@ class MovieListActivity : BaseActivity(), OnRecyclerViewItemClickListener<Movie>
         super.onCreate(savedInstanceState)
         binding =
             DataBindingUtil.setContentView(this@MovieListActivity, R.layout.activity_movie_list)
+        binding.movieListActivity = this
 
         setToolbar()
         movieListViewModel = ViewModelProvider(this)
