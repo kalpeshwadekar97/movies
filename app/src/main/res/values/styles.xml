@@ -30,21 +30,21 @@
     <!--Textview Styles-->
     <style name="RegularText" parent="Widget.AppCompat.TextView">
         <item name="android:textColor">@color/text_view_black</item>
-        <item name="android:textSize">@dimen/textsize_14</item>
+        <item name="android:textSize">@dimen/textsize_15</item>
         <item name="android:fontFamily">@font/roboto_regular</item>
         <item name="android:lineSpacingExtra">@dimen/textsize_4</item>
     </style>
 
     <style name="MediumText" parent="Widget.AppCompat.TextView">
         <item name="android:textColor">@color/text_view_black</item>
-        <item name="android:textSize">@dimen/textsize_14</item>
+        <item name="android:textSize">@dimen/textsize_15</item>
         <item name="android:fontFamily">@font/roboto_medium</item>
         <item name="android:lineSpacingExtra">@dimen/textsize_4</item>
     </style>
 
     <style name="BoldText" parent="Widget.AppCompat.TextView">
         <item name="android:textColor">@color/text_view_black</item>
-        <item name="android:textSize">@dimen/textsize_14</item>
+        <item name="android:textSize">@dimen/textsize_15</item>
         <item name="android:fontFamily">@font/roboto_bold</item>
         <item name="android:lineSpacingExtra">@dimen/textsize_4</item>
     </style>

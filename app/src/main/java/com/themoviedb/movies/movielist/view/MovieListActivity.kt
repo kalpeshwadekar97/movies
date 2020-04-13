@@ -9,8 +9,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.themoviedb.movies.R
 import com.themoviedb.movies.baseviews.BaseActivity
+import com.themoviedb.movies.customviews.EqualSpacingItemDecoration
 import com.themoviedb.movies.customviews.OnRecyclerViewItemClickListener
 import com.themoviedb.movies.databinding.ActivityMovieListBinding
+import com.themoviedb.movies.enums.RecyclerViewDisplayMode
 import com.themoviedb.movies.enums.SortByOptions
 import com.themoviedb.movies.enums.State
 import com.themoviedb.movies.moviedetails.view.MovieDetailsActivity
@@ -28,6 +30,8 @@ class MovieListActivity : BaseActivity(), OnRecyclerViewItemClickListener<Movie>
     private lateinit var binding: ActivityMovieListBinding
     private var sortedBy: SortByOptions = SortByOptions.POPULARITY // by default sort by popular
     private val initialPageNumber = 1
+    private val equalSpacingItemDecoration =
+        EqualSpacingItemDecoration(20, RecyclerViewDisplayMode.GRID)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,7 +57,9 @@ class MovieListActivity : BaseActivity(), OnRecyclerViewItemClickListener<Movie>
 
     private fun setAdapter() {
         movieListAdapter = MovieListAdapter(this, this)
+        rv_movie_list.removeItemDecoration(equalSpacingItemDecoration)
         rv_movie_list.apply {
+            addItemDecoration(equalSpacingItemDecoration)
             layoutManager = GridLayoutManager(this@MovieListActivity, 2)
             adapter = movieListAdapter
         }
@@ -87,6 +93,7 @@ class MovieListActivity : BaseActivity(), OnRecyclerViewItemClickListener<Movie>
         sortedBy = selectedSortByOption
         movieListViewModel.getMovieList(initialPageNumber, sortedBy)
         setAdapter()
+        initState()
     }
 
     fun onRetryClick() {
