@@ -1,6 +1,7 @@
 package com.themoviedb.movies.moviedetails.view
 
 import android.os.Bundle
+import android.view.View
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -67,6 +68,7 @@ class MovieDetailsActivity : BaseActivity() {
         when (api) {
             ApiConstant.GET_MOVIE_DETAILS_API ->
                 if (apiResponse.status == ApiResponseStatus.SUCCESS) {
+                    grp_content.visibility = View.VISIBLE
                     movieDetailsApiResponse = apiResponse.data as MovieDetailsApiResponse
                     setMovieDetailsPage()
                 }

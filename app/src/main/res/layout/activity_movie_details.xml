@@ -157,6 +157,14 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_overview" />
 
+                <androidx.constraintlayout.widget.Group
+                    android:id="@+id/grp_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:constraint_referenced_ids="tv_title,tv_tagline,tv_release_date,tv_runtime,
+                    tv_vote_count,tv_vote_average,iv_star,rv_genres,tv_overview,
+                    tv_countries_languages" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.core.widget.NestedScrollView>
