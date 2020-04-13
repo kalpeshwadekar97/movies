@@ -31,7 +31,8 @@ class MovieListActivity : BaseActivity(), OnRecyclerViewItemClickListener<Movie>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this@MovieListActivity, R.layout.activity_movie_list)
+        binding =
+            DataBindingUtil.setContentView(this@MovieListActivity, R.layout.activity_movie_list)
 
         setToolbar()
         movieListViewModel = ViewModelProvider(this)
@@ -64,6 +65,7 @@ class MovieListActivity : BaseActivity(), OnRecyclerViewItemClickListener<Movie>
     private fun initState() {
         movieListViewModel.getState().observe(this, Observer {
             rl_error.visibility = if (it == State.ERROR) View.VISIBLE else View.GONE
+            progress_bar.visibility = if (it == State.LOADING) View.VISIBLE else View.GONE
             if (!movieListViewModel.listIsEmpty()) {
                 movieListAdapter.setState()
             }
