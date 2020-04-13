@@ -2,12 +2,14 @@
     <string name="app_name">Movies</string>
     <string name="no_internet_msg">You are currently offline. Please check your Internet connection.</string>
     <string name="something_went_wrong">Something went wrong. Please try again later.</string>
+    <string name="something_went_wrong_error">Something went wrong.</string>
     <string name="release_date">Release Date: %1$s</string>
     <string name="added_to_watch_later_list">Added to watch later list</string>
     <string name="sort_by_popular">Popularity</string>
     <string name="sort_by_ratings">User Ratings</string>
     <string name="sort_by_release_date">Release Date</string>
     <string name="sort_by_vote_count">Vote Count</string>
+    <string name="retry">Retry</string>
 
     // Labels
     <string name="lbl_vote">Vote: %1$d</string>

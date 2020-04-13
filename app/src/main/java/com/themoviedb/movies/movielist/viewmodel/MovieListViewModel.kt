@@ -54,4 +54,8 @@ class MovieListViewModel(private val applicationContext: Application) :
     fun listIsEmpty(): Boolean {
         return movieListResponseLiveData.value?.isEmpty() ?: true
     }
+
+    fun retry() {
+        moviesDataSourceFactory.moviesDataSourceLiveData.value?.retry()
+    }
 }
