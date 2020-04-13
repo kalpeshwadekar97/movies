@@ -16,4 +16,5 @@
     <string name="lbl_adult">Adult</string>
     <string name="lbl_okay">Okay</string>
     <string name="lbl_sort_by">Sort By</string>
+    <string name="lbl_available_in">Available In:</string>
 </resources>
